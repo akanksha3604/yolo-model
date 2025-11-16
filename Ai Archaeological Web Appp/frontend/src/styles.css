@@ -1,0 +1,225 @@
+/* styles.css - Modern Minimalist Charcoal Theme (Centered) */
+
+:root {
+    --bg-color: #f0f2f5;        /* Light background */
+    --card-color: #ffffff;      /* Pure white cards */
+    --text-color: #333333;      /* Dark text */
+    --primary-color: #4b5563;   /* Charcoal Grey for accents */
+    --secondary-color: #6b7280; /* Muted grey for secondary text/borders */
+    --border-color: #e5e7eb;    /* Very light border/divider */
+    --highlight-color: #fafafa; /* Subtle background for active areas */
+    --active-light: #f3f4f6;    /* Lighter grey for hover/subtle elements */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+.app-container {
+    max-width: 900px; /* Slightly narrower for a focused feel */
+    margin: 40px auto;
+    background: var(--card-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Tabs */
+.app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center aligns header content */
+    justify-content: center;
+    padding: 30px 40px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-color);
+}
+
+.title {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.tabs-container {
+    display: flex;
+    gap: 0; /* Tabs touch for a segmented control look */
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.tab-button {
+    padding: 10px 20px;
+    border: none; /* Borders handled by tabs-container */
+    background: var(--highlight-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.tab-button:hover {
+    background: var(--active-light);
+}
+
+.tab-button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    padding: 40px;
+}
+
+.panel h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Uploader Area */
+.uploader {
+    border: 2px dashed var(--secondary-color);
+    padding: 50px 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    background: var(--highlight-color);
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.uploader:hover {
+    border-color: var(--primary-color);
+    background: var(--active-light);
+}
+
+.uploader p {
+    margin-top: 0;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.uploader input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.uploader button {
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+.uploader button:hover {
+    background: #374151; /* Darker charcoal */
+}
+
+/* Controls and Results */
+.controls { 
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.controls button:first-child { /* Run Detection button */
+    background: var(--primary-color);
+}
+.controls button:first-child:hover {
+    background: #374151;
+}
+
+.controls button:disabled {
+    background: var(--border-color);
+    color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+.controls button:last-child { /* Clear button style */
+    background: var(--secondary-color);
+}
+.controls button:last-child:hover {
+    background: #5c626e;
+}
+
+.preview img, .result img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--highlight-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.result h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.result h4 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    font-size: 0.9em;
+}
+
+.result ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result li {
+    background: var(--card-color);
+    padding: 8px 12px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    font-family: monospace;
+    color: var(--text-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.app-footer {
+    padding: 15px 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-color);
+    font-size: 0.85em;
+    text-align: center; /* Center-aligns footer text */
+    background: var(--highlight-color);
+}
